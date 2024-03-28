@@ -69,7 +69,7 @@ def main():
                 simulation_url = "https://webots.cloud/run?version=R2023b&url=https%3A%2F%2Fgithub.com%2Ffumipi%2Fautonomous_pen_plotter_concept%2Fblob%2Fmain%2Fworlds%2Fpenbot.wbt&type=demo"
                 webbrowser.open(simulation_url)
                 
-                st.info('シミュレーションは、ユーザーのデフォルトブラウザーで開いています。')
+                st.markdown(f'シミュレーションは、ユーザーのデフォルトブラウザーで開いています。もし開いていない場合は[ここ]({simulation_url})をクリックしてください。', unsafe_allow_html=True)
             else:
                 st.error(f'Failed to store the SVG file. Status code: {response.status_code}')
                 st.error(f'Error message: {response.text}')
