@@ -63,7 +63,7 @@ def main():
             response = store_svg_to_github(svg_content, commit_message)
             
             if response.status_code in [200, 201]:
-                st.success('SVGファイルが登録できました。\n シミュレータのwebots.cloudはiframeに埋め込むことが出来ないため、別タブでブラウザを立ち上げます。')
+                st.success('SVGファイルが登録できました。')
                 
                 # ユーザーのデフォルトブラウザーでwebots.cloudのシミュレーションを開く
                 simulation_url = "https://webots.cloud/run?version=R2023b&url=https%3A%2F%2Fgithub.com%2Ffumipi%2Fautonomous_pen_plotter_concept%2Fblob%2Fmain%2Fworlds%2Fpenbot.wbt&type=demo"
