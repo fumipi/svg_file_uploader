@@ -55,11 +55,9 @@ def main():
         # アップロードされたファイルを読み込む
         svg_content = uploaded_file.read()
         
-        # コミットメッセージ入力
-        commit_message = st.text_input('Commit message', value='Add or update SVG file')
-        
         # SVGファイルをGithubに登録
         if st.button('SVGファイルを登録してシミュレーションをスタート'):
+            commit_message = 'Add or update SVG file'  # デフォルトのコミットメッセージを設定
             response = store_svg_to_github(svg_content, commit_message)
             
             if response.status_code in [200, 201]:
