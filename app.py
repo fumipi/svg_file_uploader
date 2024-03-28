@@ -66,7 +66,7 @@ def main():
              
                 # ユーザーのデフォルトブラウザーでwebots.cloudのシミュレーションを開く
                 simulation_url = "https://webots.cloud/run?version=R2023b&url=https%3A%2F%2Fgithub.com%2Ffumipi%2Fautonomous_pen_plotter_concept%2Fblob%2Fmain%2Fworlds%2Fpenbot.wbt&type=demo"
-                webbrowser.open(simulation_url)
+                webbrowser.open(simulation_url, new = 1)
                 
                 st.markdown(f'SVGファイルが登録できました。シミュレーションは、ユーザーのデフォルトブラウザーで開いています。もし開いていない場合は[ここ]({simulation_url})をクリックしてください。', unsafe_allow_html=True)
             else:
