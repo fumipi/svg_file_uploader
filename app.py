@@ -45,7 +45,7 @@ def store_svg_to_github(svg_content, commit_message):
 
 def main():
     st.title('File Uploader')
-    st.text('自走式ペンプロッタープリンターが描く画像をアップロードするアプリです。 \n画像がアップロードできたらロボットを動かすシミュレーションを開始します。')
+    st.text('自走式ペンプロッタープリンターが描く \n画像をアップロードするアプリです。')
     
     # ファイルアップロードUI
     uploaded_file = st.file_uploader('画像を選択', type=['svg'])
@@ -55,7 +55,7 @@ def main():
         svg_content = uploaded_file.read()
         
         # SVGファイルをGithubに登録
-        if st.button('画像ファイルを登録してシミュレーションをスタート'):
+        if st.button('画像ファイルを登録', type="primary"):
             commit_message = 'Add or update SVG file'  # デフォルトのコミットメッセージを設定
             response = store_svg_to_github(svg_content, commit_message)
             
